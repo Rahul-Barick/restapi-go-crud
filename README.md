@@ -54,6 +54,16 @@ DB_NAME=internal_transfers
   go run main.go
   ```
 **Server will start running on PORT: 3000**
+  Example of sample curl and **referenceId** is a idempotent key must he passed in headers of all POST API
+  ```
+  curl --location 'http://localhost:3000/api/accounts' \
+--header 'Content-Type: application/json' \
+--header 'referenceId: 4e176ce6-bd98-48c4-b11d-b7b0c0110934' \
+--data '{
+    "account_id": 108,
+    "initial_balance": 1000.50
+}'
+```
 
 # Overview & Implementation
 1. The project implements REST API's with proper validations, idempotency, and audit-compliant behavior using Go, Gin framework, and PostgreSQL. It is designed keeping clean architecture and best practices in mind.
