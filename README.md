@@ -59,9 +59,9 @@ DB_NAME=internal_transfers
 1. The project implements REST API's with proper validations, idempotency, and audit-compliant behavior using Go, Gin framework, and PostgreSQL. It is designed keeping clean architecture and best practices in mind.
 2. Database Design:-
    - The system revolves around three main entities:
-   - Accounts:- Represents a user’s account in the system that holds a monetary balance and is the foundation for all financial operations.
-   - Transactions:- Represents a money transfer from one account to another. Ensures proper idempotency, validation, and consistency across the system.
-   - Ledger Entries:-  Ledger is the Source of Truth. Stores dual-entry ledger rows per transaction - (CREDIT and DEBIT). It Ensures compliance-grade auditability of money movement.
+   - **Accounts**:- Represents a user’s account in the system that holds a monetary balance and is the foundation for all financial operations.
+   - **Transactions**:- Represents a money transfer from one account to another. Ensures proper idempotency, validation, and consistency across the system.
+   - **Ledger Entries**:-  Ledger is the Source of Truth. Stores dual-entry ledger rows per transaction - (CREDIT and DEBIT). It Ensures compliance-grade auditability of money movement.
 3. This project is structured around Clean Architecture, encouraging separation of concerns.
    - **Handler Layer** (app/handler/) - Contains business entrypoints
    - **DTO Layer** (app/dto/) - Separates input/output schema & enforces strict validation using Gin binding and Go Validator tags
