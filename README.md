@@ -54,7 +54,8 @@ DB_NAME=internal_transfers
   go run main.go
   ```
 **Server will start running on PORT: 3000**
-  Example of sample curl and **referenceId** is a idempotent key must he passed in headers of all POST API
+  Example of sample curl and **referenceId** is a idempotent key must he passed in headers of all POST API.
+ **It must be passed ALWAYS UNIQUE ID as UUID**
   ```
   curl --location 'http://localhost:3000/api/accounts' \
 --header 'Content-Type: application/json' \
