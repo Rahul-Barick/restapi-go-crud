@@ -36,7 +36,7 @@ func main() {
 	}
 	// Routes
 	r := gin.Default()
-	api := r.Group("/api")
+	api := r.Group("/")
 	api.Use(middleware.IdempotencyMiddleware()) // sets referenceID in context
 	{
 		api.POST("/accounts", handler.CreateAccount(db))
