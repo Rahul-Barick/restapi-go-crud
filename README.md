@@ -85,7 +85,7 @@ DB_NAME=internal_transfers
    - PostgreSQL is Used as a Strict Relational Store.  No NoSQL or in-memory DB is used — PostgreSQL handles all transactional and audit data.
    - Application Operates in UTC Only. It Ensures consistency across globally distributed systems.
    - No Soft Deletes:- Entities like accounts, transactions, and ledger_entries cannot be deleted. Financial records must be immutable for audit and compliance reasons. Hard deletes are also avoided to maintain foreign key integrity. If deletion is ever required, it must be handled via archival and not actual deletion.
-5. **Technical summaries:-**
+5. **Technical implementation:-**
    - Idempotency Handling: Each transaction is uniquely identified via referenceId (UUID) to avoid duplicate processing.
    - Row-Level Locking: Uses gorm.Clauses(clause.Locking{Strength: "UPDATE"}) to handle concurrent balance changes safely. Transfers acquire row locks on source and destination accounts during balance modification & to prevent race conditions when multiple transactions happen on the same account.
    - Validation Layer: Strong validation via binding tags + custom validator integration.
