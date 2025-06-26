@@ -61,8 +61,8 @@ DB_NAME=internal_transfers
 --header 'Content-Type: application/json' \
 --header 'referenceId: 4e176ce6-bd98-48c4-b11d-b7b0c0110934' \
 --data '{
-    "account_id": 108,
-    "initial_balance": 1000.50
+    "account_id": 123,
+    "initial_balance": "100.23344"
 }'
 ```
 
