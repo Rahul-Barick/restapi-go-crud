@@ -57,7 +57,7 @@ DB_NAME=internal_transfers
   Example of sample curl and **referenceId** is a idempotent key must he passed in headers of all POST API.
  **It must be passed ALWAYS UNIQUE ID as UUID**
   ```
-  curl --location 'http://localhost:3000/api/accounts' \
+  curl --location 'http://localhost:3000/accounts' \
 --header 'Content-Type: application/json' \
 --header 'referenceId: 4e176ce6-bd98-48c4-b11d-b7b0c0110934' \
 --data '{
